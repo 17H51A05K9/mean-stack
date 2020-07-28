@@ -8,6 +8,9 @@ app.get('/',(req,res)=>{
   app.get('/resume',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/texttag.html')
   })
+  app.get('/canvas',(req,res)=>{
+    res.sendFile(__dirname+'/FrontEnd/html/canvasclock.html')
+  })
 app.listen(port,()=>{
     console.log('connected')
 })
