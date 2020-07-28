@@ -3,9 +3,23 @@
     color:white;
 }
 #button2{
-    background-color:rgb(151, 158, 138);
+    background-color:yellowgreen;
     color:white;
 }
-#form{
-    text-align: center;
+#form1{
+    text-align:left;
+}
+#form2{
+    text-align:left;
+}
+body{
+    background-image: url("/images/mean.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
