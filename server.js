@@ -11,6 +11,9 @@ app.get('/',(req,res)=>{
   app.get('/canvas',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/canvasclock.html')
   })
+  app.get('/snakegame',(req,res)=>{
+    res.sendFile(__dirname+'/FrontEnd/html/snakegame.html')
+  })
 app.listen(port,()=>{
     console.log('connected')
 })

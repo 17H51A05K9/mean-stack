@@ -1,0 +1,9 @@
+#snake{ 
+    width: 600;
+    height: 400;
+    background-color:white;
+}
+#canvas{
+   padding-left: 30%;
+   padding-top: 10%;
+}
