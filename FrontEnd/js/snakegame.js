@@ -22,13 +22,14 @@ var draw=(x,y)=>{
     for(var i=0;i<tails.length;i++)
     {
       ctx.fillRect(tails[i].x,tails[i].y,scale,scale);
+      if(x==tails[i].x && y==tails[i].y)
+       {
+           alert("Game Over")
+           window.location.reload();
+       }
     }
+    ctx.fillStyle="red"
     ctx.fillRect(x,y,scale,scale);
-    // if(x==x1 && y==x2)
-    //  {
-    //      ctx.clearRect(x1,x2,scale,scale);
-    //      RandomFruit();
-    //  }
 }
 var update=(xs,ys)=>{
     for(var i=0;i<tails.length-1;i++)
@@ -53,7 +54,7 @@ var Snake=()=>{
         ctx.clearRect(0,0,canvas.width,canvas.height);
         fruitdraw();
         draw(x,y);
-        console.log(x+" "+y);
+        //console.log(x+" "+y);
         update(xspeed,yspeed);
        if(x==x1 && y==x2)
        {
