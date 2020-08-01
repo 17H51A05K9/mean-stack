@@ -38,9 +38,9 @@ var update=(xs,ys)=>{
     tails[total-1]={x:this.x,y:this.y};
  x=x+xs;
  y=y+ys;
- if(x>canvas.width)
+ if(x>=canvas.width)
  x=0;
- if(y>canvas.height)
+ if(y>=canvas.height)
  y=0;
  if(x<0)
  x=canvas.width;
