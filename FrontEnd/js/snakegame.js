@@ -5,6 +5,7 @@ var scale=10;
 var snake;
 var tails=[]
 var x=0,y=0,xspeed=scale,yspeed=0,x1,x2,rows=canvas.height/scale,cols=canvas.width/scale,total=0;
+var score=document.getElementById('score')
 var RandomFruit=()=>{
     x1=(Math.floor(Math.random() * 10 +1)*scale); 
     x2=(Math.floor(Math.random() * 10 +1)*scale);
@@ -19,15 +20,18 @@ var fruitdraw=()=>{
 var draw=(x,y)=>{
     //console.log("draw")
     ctx.fillStyle="green";
+    let f=0;
     for(var i=0;i<tails.length;i++)
     {
       ctx.fillRect(tails[i].x,tails[i].y,scale,scale);
       if(x==tails[i].x && y==tails[i].y)
        {
-           alert("Game Over")
-           window.location.reload();
+         total=0;
+         tails=[];
+         score.innerHTML='Score:'+0
        }
     }
+   
     ctx.fillStyle="red"
     ctx.fillRect(x,y,scale,scale);
 }
@@ -59,6 +63,8 @@ var Snake=()=>{
        if(x==x1 && y==x2)
        {
            total++;
+          
+           score.innerHTML='Score:'+total
         //console.log(x1+" "+x2);
            RandomFruit();
           // x=x1,y=x2;
