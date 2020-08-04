@@ -13,7 +13,7 @@
     text-align:left;
 }
 body{
-   background-image: url("/images/mean.jpg");
+   background-color: antiquewhite;
 
   /* Full height */
   height: 100%;
@@ -24,6 +24,10 @@ body{
   background-size: cover;
 }
 #snake{
+    background-color:yellowgreen;
+    color:white;
+}
+#tumbola{
     background-color:yellowgreen;
     color:white;
 }
