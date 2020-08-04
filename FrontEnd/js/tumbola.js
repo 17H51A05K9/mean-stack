@@ -49,7 +49,7 @@ var tumbola=()=>{
            }
           i++;
           
-  },1000);
+  },3000);
 };
 tumbola()
 var Start=()=>{
