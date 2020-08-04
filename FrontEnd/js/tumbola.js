@@ -17,7 +17,7 @@ while(arr.length < 100){
   var r = Math.floor(Math.random() * 100) + 1;
   if(arr.indexOf(r) === -1) arr.push(r);
 }
-var back="<form action=\"/\"><button type=\"submit\" class=\"btn btn-default\" id=\"button12\">Back</button></form>";
+var back="<form action=\"/\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><button type=\"submit\" class=\"btn btn-default\" id=\"button12\">Back</button></form>";
 var start="<div id=\"but\"><button type=\"submit\" class=\"btn btn-default\" id=\"button1\" onclick=\"Start()\">StartNewGame</button></div>";
 $("body").append(bodyhtml)
 $("body").append(start)

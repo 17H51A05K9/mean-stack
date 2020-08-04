@@ -17,10 +17,12 @@ h1{
 #button12{
     background-color:yellowgreen;
     color:white;
-    float: right;
+    
 }
 #button1{
     background-color:yellowgreen;
     color:white;
 }
- 
+ #but{
+     text-align: center;
+ }
