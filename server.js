@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
   app.get('/snakegame',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/snakegame.html')
   })
-  app.get('/tumbola',(req,res)=>{
+  app.get('/tambola',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/tumbola.html');
   })
 app.listen(port,()=>{
