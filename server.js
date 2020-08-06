@@ -17,6 +17,13 @@ app.get('/',(req,res)=>{
   app.get('/tambola',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/tumbola.html');
   })
+  var jsondata=[{name:"praveen",age:20},{name:"sai",age:20},{name:"akash",age:20}]
+  app.get('/jsondata',(req,res)=>{
+    res.send(JSON.stringify(jsondata))
+  })
+  app.get('/jsondataindex',(req,res)=>{
+    res.sendFile(__dirname+'/FrontEnd/html/jsondata.html')
+  })
 app.listen(port,()=>{
     console.log('connected')
 })
