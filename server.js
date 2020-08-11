@@ -1,10 +1,16 @@
 var express=require('express')
+const config=require('./backend/DB/config')
+const mongodb=require('./backend/DB/dbconnect')
+const formmodel=require('./backend/models/form')
+var bodyParser = require('body-parser')
+mongodb.connect
 var app=express();
-var port=process.env.PORT || 3000
-app.use(express.static(__dirname+'/FrontEnd'))
-app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/FrontEnd/html/index.html')
-  })
+  app.use(express.static(__dirname+'/FrontEnd'))
+  app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+  app.get('/',(req,res)=>{
+      res.sendFile(__dirname+'/FrontEnd/html/index.html')
+    })
   app.get('/resume',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/texttag.html')
   })
@@ -24,6 +30,24 @@ app.get('/',(req,res)=>{
   app.get('/jsondataindex',(req,res)=>{
     res.sendFile(__dirname+'/FrontEnd/html/jsondata.html')
   })
-app.listen(port,()=>{
+  app.get('/form',(req,res)=>{
+      res.sendFile(__dirname+'/FrontEnd/html/form.html')
+  })
+  app.post('/submitdata',async(req,res)=>{
+    var form=new formmodel(req.body);
+    await form.save().then((data)=>{
+        res.send(JSON.stringify(data))
+    }).catch((e)=>{
+      console.log(e)
+    })
+  })
+  app.get('/getallusers',async(req,res)=>{
+        var allusers=await formmodel.find({}).then((data)=>{
+              res.send(JSON.stringify(data))
+        }).catch(e=>{
+          console.log(e)
+        })
+  })
+app.listen(config.port,()=>{
     console.log('connected')
 })
