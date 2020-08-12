@@ -6,13 +6,16 @@ $('#formbutton').click(async()=>{
      email:document.getElementById('exampleInputEmail1').value,
      phonenumber:document.getElementById('number').value
 }
-await $.post('/submitdata',userdata,(data,status)=>{
+await $.post('/submitdata',userdata,async(data,status)=>{
     
   if(status=="success")
       {
-        window.setTimeout(()=>{
+      await  window.setTimeout(()=>{
            $('#show').html("Submitted Sucessfully")
-        },2000);
+        },1000);
+         window.setTimeout(()=>{
+            window.location.reload()
+         },2000)
       }
 })
 })
