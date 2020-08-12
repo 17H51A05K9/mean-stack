@@ -10,7 +10,9 @@ await $.post('/submitdata',userdata,(data,status)=>{
     
   if(status=="success")
       {
-          window.location.reload()
+        window.setTimeout(()=>{
+           $('#show').html("Submitted Sucessfully")
+        },2000);
       }
 })
 })

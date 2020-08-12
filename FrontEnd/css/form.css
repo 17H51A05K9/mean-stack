@@ -45,3 +45,6 @@ body{
 table,tr,td,th{
     border: 2px solid black;
 }
+#show{
+    color: green;
+}
