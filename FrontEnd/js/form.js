@@ -10,7 +10,7 @@ await $.post('/submitdata',userdata,async(data,status)=>{
     
   if(status=="success")
       {
-      await  window.setTimeout(()=>{
+        window.setTimeout(()=>{
            $('#show').html("Submitted Sucessfully")
         },1000);
          window.setTimeout(()=>{
